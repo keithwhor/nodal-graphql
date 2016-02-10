@@ -1,0 +1,23 @@
+{
+  "name": "nodal-graphql",
+  "version": "0.0.0",
+  "description": "nodal-graphql",
+  "author": "Keith Horwood",
+  "main": "server.js",
+  "engines": {
+    "node": "4.2.4"
+  },
+  "dependencies": {
+    "nodal": "0.7.2"
+  },
+  "devDependencies": {
+    "chai": "~3.5.0",
+    "mocha": "~2.4.5"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test mocha ./test/runner.js",
+    "start": "NODE_ENV=development node cluster.js --harmony",
+    "worker": "NODE_ENV=development node worker.js --harmony"
+  },
+  "private": true
+}

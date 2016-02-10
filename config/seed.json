@@ -1,0 +1,395 @@
+{
+
+  "development": {
+    "User": [
+      {
+        "username": "Jon Snow",
+        "email": "crow@northofthew.all",
+        "age": "20"
+      },
+      {
+        "username": "Tyrion Lannister",
+        "email": "drunk@i.mp",
+        "age": "34"
+      },
+      {
+        "username": "Sansa Stark",
+        "email": "redhead@why.me",
+        "age": "17"
+      }
+    ],
+    "Thread": [
+      {
+        "user_id": 1,
+        "title": "I know nothing"
+      },
+      {
+        "user_id": 2,
+        "title": "j+t = bros 4 life"
+      },
+      {
+        "user_id": 3,
+        "title": "Arya? You here?"
+      },
+      {
+        "user_id": 1,
+        "title": "going up north all week"
+      },
+      {
+        "user_id": 2,
+        "title": "best place to drink?"
+      },
+      {
+        "user_id": 3,
+        "title": "brb escaping"
+      },
+      {
+        "user_id": 1,
+        "title": "dammit olly!"
+      },
+      {
+        "user_id": 2,
+        "title": "where can i get a massage?"
+      },
+      {
+        "user_id": 3,
+        "title": "I will perservere."
+      }
+    ],
+    "Post": [
+      {
+        "user_id": 1,
+        "thread_id": 1,
+        "body": "hello, hello"
+      },
+      {
+        "user_id": 1,
+        "thread_id": 2,
+        "body": "hello, WORLD"
+      },
+      {
+        "user_id": 1,
+        "thread_id": 3,
+        "body": "or something"
+      },
+      {
+        "user_id": 1,
+        "thread_id": 4,
+        "body": "hello, hello"
+      },
+      {
+        "user_id": 1,
+        "thread_id": 5,
+        "body": "hello, WORLD"
+      },
+      {
+        "user_id": 1,
+        "thread_id": 6,
+        "body": "or something"
+      },
+      {
+        "user_id": 1,
+        "thread_id": 7,
+        "body": "hello, hello"
+      },
+      {
+        "user_id": 1,
+        "thread_id": 8,
+        "body": "hello, WORLD"
+      },
+      {
+        "user_id": 1,
+        "thread_id": 9,
+        "body": "or something"
+      },
+      {
+        "user_id": 2,
+        "thread_id": 1,
+        "body": "drup--nk"
+      },
+      {
+        "user_id": 2,
+        "thread_id": 2,
+        "body": "i like 2 drink"
+      },
+      {
+        "user_id": 2,
+        "thread_id": 3,
+        "body": "also like drink wine?? 11,."
+      },
+      {
+        "user_id": 2,
+        "thread_id": 4,
+        "body": "drup--nk"
+      },
+      {
+        "user_id": 2,
+        "thread_id": 5,
+        "body": "i like 2 drink"
+      },
+      {
+        "user_id": 2,
+        "thread_id": 6,
+        "body": "also like drink wine?? 11,."
+      },
+      {
+        "user_id": 2,
+        "thread_id": 7,
+        "body": "drup--nk"
+      },
+      {
+        "user_id": 2,
+        "thread_id": 8,
+        "body": "i like 2 drink"
+      },
+      {
+        "user_id": 2,
+        "thread_id": 9,
+        "body": "also like drink wine?? 11,."
+      },
+      {
+        "user_id": 3,
+        "thread_id": 1,
+        "body": "Miss my wolf."
+      },
+      {
+        "user_id": 3,
+        "thread_id": 2,
+        "body": "Arya, hope you're well"
+      },
+      {
+        "user_id": 3,
+        "thread_id": 3,
+        "body": "Hello. World."
+      },
+      {
+        "user_id": 3,
+        "thread_id": 4,
+        "body": "Miss my wolf."
+      },
+      {
+        "user_id": 3,
+        "thread_id": 5,
+        "body": "Arya, hope you're well"
+      },
+      {
+        "user_id": 3,
+        "thread_id": 6,
+        "body": "Hello. World."
+      },
+      {
+        "user_id": 3,
+        "thread_id": 7,
+        "body": "Miss my wolf."
+      },
+      {
+        "user_id": 3,
+        "thread_id": 8,
+        "body": "Arya, hope you're well"
+      },
+      {
+        "user_id": 3,
+        "thread_id": 9,
+        "body": "Hello. World."
+      }
+    ]
+  },
+
+  "test": {},
+
+  "production": {
+    "User": [
+      {
+        "username": "Jon Snow",
+        "email": "crow@northofthew.all",
+        "age": "20"
+      },
+      {
+        "username": "Tyrion Lannister",
+        "email": "drunk@i.mp",
+        "age": "34"
+      },
+      {
+        "username": "Sansa Stark",
+        "email": "redhead@why.me",
+        "age": "17"
+      }
+    ],
+    "Thread": [
+      {
+        "user_id": 1,
+        "title": "I know nothing"
+      },
+      {
+        "user_id": 2,
+        "title": "j+t = bros 4 life"
+      },
+      {
+        "user_id": 3,
+        "title": "Arya? You here?"
+      },
+      {
+        "user_id": 1,
+        "title": "going up north all week"
+      },
+      {
+        "user_id": 2,
+        "title": "best place to drink?"
+      },
+      {
+        "user_id": 3,
+        "title": "brb escaping"
+      },
+      {
+        "user_id": 1,
+        "title": "dammit olly!"
+      },
+      {
+        "user_id": 2,
+        "title": "where can i get a massage?"
+      },
+      {
+        "user_id": 3,
+        "title": "I will perservere."
+      }
+    ],
+    "Post": [
+      {
+        "user_id": 1,
+        "thread_id": 1,
+        "body": "hello, hello"
+      },
+      {
+        "user_id": 1,
+        "thread_id": 2,
+        "body": "hello, WORLD"
+      },
+      {
+        "user_id": 1,
+        "thread_id": 3,
+        "body": "or something"
+      },
+      {
+        "user_id": 1,
+        "thread_id": 4,
+        "body": "hello, hello"
+      },
+      {
+        "user_id": 1,
+        "thread_id": 5,
+        "body": "hello, WORLD"
+      },
+      {
+        "user_id": 1,
+        "thread_id": 6,
+        "body": "or something"
+      },
+      {
+        "user_id": 1,
+        "thread_id": 7,
+        "body": "hello, hello"
+      },
+      {
+        "user_id": 1,
+        "thread_id": 8,
+        "body": "hello, WORLD"
+      },
+      {
+        "user_id": 1,
+        "thread_id": 9,
+        "body": "or something"
+      },
+      {
+        "user_id": 2,
+        "thread_id": 1,
+        "body": "drup--nk"
+      },
+      {
+        "user_id": 2,
+        "thread_id": 2,
+        "body": "i like 2 drink"
+      },
+      {
+        "user_id": 2,
+        "thread_id": 3,
+        "body": "also like drink wine?? 11,."
+      },
+      {
+        "user_id": 2,
+        "thread_id": 4,
+        "body": "drup--nk"
+      },
+      {
+        "user_id": 2,
+        "thread_id": 5,
+        "body": "i like 2 drink"
+      },
+      {
+        "user_id": 2,
+        "thread_id": 6,
+        "body": "also like drink wine?? 11,."
+      },
+      {
+        "user_id": 2,
+        "thread_id": 7,
+        "body": "drup--nk"
+      },
+      {
+        "user_id": 2,
+        "thread_id": 8,
+        "body": "i like 2 drink"
+      },
+      {
+        "user_id": 2,
+        "thread_id": 9,
+        "body": "also like drink wine?? 11,."
+      },
+      {
+        "user_id": 3,
+        "thread_id": 1,
+        "body": "Miss my wolf."
+      },
+      {
+        "user_id": 3,
+        "thread_id": 2,
+        "body": "Arya, hope you're well"
+      },
+      {
+        "user_id": 3,
+        "thread_id": 3,
+        "body": "Hello. World."
+      },
+      {
+        "user_id": 3,
+        "thread_id": 4,
+        "body": "Miss my wolf."
+      },
+      {
+        "user_id": 3,
+        "thread_id": 5,
+        "body": "Arya, hope you're well"
+      },
+      {
+        "user_id": 3,
+        "thread_id": 6,
+        "body": "Hello. World."
+      },
+      {
+        "user_id": 3,
+        "thread_id": 7,
+        "body": "Miss my wolf."
+      },
+      {
+        "user_id": 3,
+        "thread_id": 8,
+        "body": "Arya, hope you're well"
+      },
+      {
+        "user_id": 3,
+        "thread_id": 9,
+        "body": "Hello. World."
+      }
+    ]
+  }
+
+}

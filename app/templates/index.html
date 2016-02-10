@@ -1,0 +1,354 @@
+<script>
+
+window.addEventListener('DOMContentLoaded', function() {
+
+  [].slice.call(document.querySelectorAll('[name="sample"]')).forEach(function(el) {
+
+    var input = el.querySelector('[name="input"]');
+    var output = el.querySelector('[name="output"]');
+    var button = el.querySelector('button');
+
+    button.addEventListener('click', function() {
+      output.classList.remove('success');
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', '/graph');
+
+      xhr.addEventListener('readystatechange', function() {
+
+        if (xhr.readyState === 4) {
+          output.value = xhr.responseText;
+          output.classList.add('success');
+        }
+
+      });
+
+      xhr.send(input.value);
+
+    });
+
+    input.addEventListener('focus', function() {
+      output.classList.remove('success');
+    });
+
+  });
+
+});
+
+</script>
+
+<div class="top-header">
+  <img src="static/images/nodal.png" alt="" />
+  <img src="static/images/heart.png" alt="" />
+  <img src="static/images/graphql_logo.png" alt="" />
+  <h5>Nodal – GraphQL Playground</h5>
+  <iframe src="https://ghbtns.com/github-btn.html?user=keithwhor&repo=nodal&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+</div>
+
+<div class="main-body-container">
+
+  <p>
+    In the newest version of <a href="//nodaljs.com/">Nodal</a>, we're pleased
+    to announce the first steps in our GraphQL implementation. We're a bit
+    limited in scope and don't yet support the full specification (only parts of
+    queries), but we're really excited to offer a fully-integrated
+    developer-friendly GraphQL solution, built atop PostgreSQL. We think GraphQL
+    represents a great step forward for service-oriented architectures,
+    providing front-end developers more effective control over the data they
+    retrieve.
+  </p>
+
+  <p>For the GitHub repo running this example, check out <a href="//github.com/keithwhor/nodal-graphql">keithwhor/nodal-graphql</a>.</p>
+
+  <div name="sample" class="main">
+
+
+    <div class="input">
+      <div class="sample-title">Client GraphQL (Edit Me!)</div>
+      <textarea name="input">users {
+  id,
+  username,
+  email,
+  age,
+  threads {
+    title,
+    created_at,
+    posts {
+      user {
+        username
+      },
+      body,
+      created_at
+    }
+  }
+}</textarea>
+
+    </div>
+
+    <div class="center">
+      <button>
+        Send Request
+      </button>
+    </div>
+
+    <div class="output">
+      <div class="sample-title">Nodal Server Response</div>
+      <textarea name="output" disabled></textarea>
+    </div>
+
+  </div>
+
+  <p>
+    If you're curious about what this is built with: we've built our own
+    GraphQL syntax parser, have it translate the syntax tree into a format
+    Nodal's Composer (ORM) is familiar with, and then generate queries from
+    there. Our data layer is entirely PostgreSQL, and each call to the database
+    exists as a single query with multiple joins.
+  </p>
+
+  <p>
+    We welcome you to play with our GraphQL endpoint. We have a sample
+    of <em>3 users, 9 threads and 27 posts</em> for you to query.
+  </p>
+
+  <div>
+    <p>
+      There are three models:
+    </p>
+    <ul>
+      <li>User (users): id, email, age, created_at, updated_at, threads, posts</li>
+      <li>Thread (threads): id, title, created_at, updated_at, user, posts</li>
+      <li>Post (posts): id, body, created_at, updated_at, user, thread</li>
+    </ul>
+    <p>
+      And a number of operators:
+    </p>
+    <ul>
+      <li>
+        is, not, lt, lte, gt, gte, contains, icontains, startswith, endswith, iendswith, like, ilike
+      </li>
+    </ul>
+  </div>
+
+  <div name="sample" class="main">
+
+    <div class="example-title">
+      Query all Users
+    </div>
+
+    <div class="input">
+      <div class="sample-title">Client GraphQL (Edit Me!)</div>
+      <textarea name="input">users</textarea>
+    </div>
+
+    <div class="center">
+      <button>
+        Send Request
+      </button>
+    </div>
+
+    <div class="output">
+      <div class="sample-title">Nodal Server Response</div>
+      <textarea name="output"></textarea>
+    </div>
+
+  </div>
+
+
+  <div name="sample" class="main">
+
+    <div class="example-title">
+      Query Users with username
+    </div>
+
+    <div class="input">
+      <div class="sample-title">Client GraphQL (Edit Me!)</div>
+      <textarea name="input">user(username: "Sansa Stark") {
+  id,
+  username,
+  email
+}</textarea>
+    </div>
+
+    <div class="center">
+      <button>Send Request</button>
+    </div>
+
+    <div class="output">
+      <div class="sample-title">Nodal Server Response</div>
+      <textarea name="output"></textarea>
+    </div>
+
+  </div>
+
+  <div name="sample" class="main">
+
+    <div class="example-title">
+      Query all Users and their Threads
+    </div>
+
+    <div class="input">
+      <div class="sample-title">Client GraphQL (Edit Me!)</div>
+      <textarea name="input">users {
+  id,
+  username,
+  email,
+  threads
+}</textarea>
+    </div>
+
+    <div class="center">
+      <button>Send Request</button>
+    </div>
+
+    <div class="output">
+      <div class="sample-title">Nodal Server Response</div>
+      <textarea name="output"></textarea>
+    </div>
+
+  </div>
+
+  <div name="sample" class="main">
+
+    <div class="example-title">
+      Query all Users their Threads, and Posts in Threads
+    </div>
+
+    <div class="input">
+      <div class="sample-title">Client GraphQL (Edit Me!)</div>
+      <textarea name="input">users {
+  id,
+  username,
+  email,
+  threads {
+    id,
+    title,
+    posts {
+      body
+    }
+  }
+}</textarea>
+    </div>
+
+    <div class="center">
+      <button>Send Request</button>
+    </div>
+
+    <div class="output">
+      <div class="sample-title">Nodal Server Response</div>
+      <textarea name="output"></textarea>
+    </div>
+
+  </div>
+
+  <div name="sample" class="main">
+
+    <div class="example-title">
+      Query all Threads, Users, Posts, and Users of Posts
+    </div>
+
+    <div class="input">
+      <div class="sample-title">Client GraphQL (Edit Me!)</div>
+      <textarea name="input">threads {
+  id,
+  title,
+  user {
+    id,
+    username
+  },
+  posts(body__contains: "hello") {
+    body,
+    user {
+      username
+    },
+    created_at
+  }
+}</textarea>
+    </div>
+
+    <div class="center">
+      <button>Send Request</button>
+    </div>
+
+    <div class="output">
+      <div class="sample-title">Nodal Server Response</div>
+      <textarea name="output"></textarea>
+    </div>
+
+  </div>
+
+  <div name="sample" class="main">
+
+    <div class="example-title">
+      Do Something Crazy
+    </div>
+
+    <div class="input">
+      <div class="sample-title">Client GraphQL (Edit Me!)</div>
+      <textarea name="input">posts {
+  id,
+  body,
+  user(age__lt: 25) {
+    username,
+    threads {
+      posts(user__username__startswith: "J") {
+        body,
+        user
+      }
+    }
+  }
+}</textarea>
+    </div>
+
+    <div class="center">
+      <button>Send Request</button>
+    </div>
+
+    <div class="output">
+      <div class="sample-title">Nodal Server Response</div>
+      <textarea name="output"></textarea>
+    </div>
+
+  </div>
+
+  <div style="margin-top: 50px;">
+    The code that generates these responses is simple. Play with the repo yourself
+    at <a href="//github.com/keithwhor/nodal-graphql">github.com/keithwhor/nodal-graphql</a>:
+  </div>
+
+  <div>
+    <pre><code>module.exports = (function() {
+
+  'use strict';
+
+  const Nodal = require('nodal');
+  const GraphQuery = Nodal.GraphQuery;
+
+  class GraphController extends Nodal.Controller {
+
+    post() {
+
+      let str = this.params.buffer.toString();
+
+      GraphQuery.query(str, 5, (err, models, format) => {
+
+        this.respond(err || models, format);
+
+      });
+
+    }
+
+  }
+
+  return GraphController;
+
+})();</code></pre>
+  </div>
+
+</div>
+
+<footer>
+
+  <p>&copy; 2016 &mdash; Visit <a href="http://nodaljs.com">Nodal</a></p>
+
+</footer>
